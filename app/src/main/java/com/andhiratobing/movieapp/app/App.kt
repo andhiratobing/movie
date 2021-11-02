@@ -1,4 +1,4 @@
-package com.andhiratobing.app
+package com.andhiratobing.movieapp.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
