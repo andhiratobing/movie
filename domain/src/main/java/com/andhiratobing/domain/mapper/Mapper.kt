@@ -1,4 +1,4 @@
-package com.andhiratobing.movieapp.domain.mapper
+package com.andhiratobing.domain.mapper
 
 interface Mapper<E, D> {
 
