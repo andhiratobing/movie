@@ -15,7 +15,7 @@ android {
         targetSdk DefaultConfig.TARGET_SDK
         versionCode DefaultConfig.VERSION_CODE
         versionName DefaultConfig.VERSION_NAME
-        buildConfigField("String", "MOVIE_API", movie_key)
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -35,9 +35,21 @@ android {
     buildFeatures {
         viewBinding true
     }
+    kapt {
+        correctErrorTypes = true
+        keepJavacAnnotationProcessors = true
+        useBuildCache = false
+    }
 }
 
 dependencies {
+
+    implementation(project(path: ':domain'))
+    implementation(project(path: ':data:remote'))
+    implementation(project(path: ':data:repositories'))
+
+    implementation(Libs.playCore)
+    implementation(Libs.playCoreKtx)
 
     implementation(Libs.androidCoreKtx)
     implementation(Libs.appCompat)
@@ -46,14 +58,10 @@ dependencies {
     //navigation
     implementation(Libs.navigationFragmentKtx)
     implementation(Libs.navigationUiKtx)
-    //network
-    implementation(Libs.retrofit)
-    implementation(Libs.gsonConverter)
-    implementation(Libs.okhttp)
-    implementation(Libs.loggingInterceptor)
     //di
     implementation(Libs.hiltAndroid)
-    kapt(Libs.hiltCompiler)
+    implementation(Libs.hiltLifecycle)
+    kapt Libs.hiltCompiler
     //glide
     implementation(Libs.glide)
     implementation(Libs.glideAnnotation)
