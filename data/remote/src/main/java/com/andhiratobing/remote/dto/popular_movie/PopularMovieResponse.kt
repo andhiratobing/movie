@@ -1,6 +1,6 @@
-package com.andhiratobing.movieapp.data.network.dto.popular_movie
+package com.andhiratobing.remote.dto.popular_movie
 
-import com.andhiratobing.movieapp.data.network.dto.MovieDto
+import com.andhiratobing.remote.dto.MovieDto
 import com.google.gson.annotations.SerializedName
 
 data class PopularMovieResponse(
