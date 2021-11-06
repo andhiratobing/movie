@@ -8,7 +8,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andhiratobing.movieapp.R
 import com.andhiratobing.movieapp.databinding.FragmentHomeBinding
-import com.andhiratobing.movieapp.domain.common.ResourceState
 import com.andhiratobing.movieapp.presentation.fragments.home.adapters.MovieListAdapter
 import com.andhiratobing.movieapp.presentation.utils.extensions.hide
 import com.andhiratobing.movieapp.presentation.utils.extensions.show
@@ -40,14 +39,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         lifecycleScope.launchWhenStarted {
             homeViewModel.popularMovieStateFlow.collect { result ->
                 when(result) {
-                    is ResourceState.Loading -> {
+                    is com.andhiratobing.domain.common.ResourceState.Loading -> {
                         binding.progressBar.show()
                     }
-                    is ResourceState.Success -> {
+                    is com.andhiratobing.domain.common.ResourceState.Success -> {
                         binding.progressBar.hide()
                         movieListAdapter.submitList(result.data)
                     }
-                    is ResourceState.Error -> {
+                    is com.andhiratobing.domain.common.ResourceState.Error -> {
                         binding.progressBar.hide()
                         Snackbar.make(binding.root, "${result.message}", Snackbar.LENGTH_LONG).show()
                     }
@@ -71,8 +70,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 }
