@@ -1,4 +1,4 @@
-package com.andhiratobing.movieapp.data.network.dto
+package com.andhiratobing.remote.dto
 
 import com.google.gson.annotations.SerializedName
 
