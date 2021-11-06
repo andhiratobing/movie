@@ -2,9 +2,9 @@ package com.andhiratobing.movieapp.presentation.fragments.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.andhiratobing.movieapp.domain.common.ResourceState
-import com.andhiratobing.movieapp.domain.interactor.popular_movie.PopularMovieUseCase
-import com.andhiratobing.movieapp.domain.models.MovieDomain
+import com.andhiratobing.domain.common.ResourceState
+import com.andhiratobing.domain.interactor.popular_movie.PopularMovieUseCase
+import com.andhiratobing.domain.models.MovieDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
