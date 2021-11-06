@@ -1,4 +1,4 @@
-package com.andhiratobing.movieapp.domain.common
+package com.andhiratobing.domain.common
 
 sealed class ResourceState<out T> {
     data class Success<out T>(val data: T): ResourceState<T>()
