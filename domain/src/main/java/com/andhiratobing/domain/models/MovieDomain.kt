@@ -1,4 +1,4 @@
-package com.andhiratobing.movieapp.domain.models
+package com.andhiratobing.domain.models
 
 data class MovieDomain(
     val backdropPath: String?,
