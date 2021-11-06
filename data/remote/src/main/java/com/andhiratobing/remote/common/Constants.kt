@@ -1,6 +1,7 @@
-package com.andhiratobing.movieapp.data.common
+package com.andhiratobing.remote.common
 
-import com.andhiratobing.movieapp.BuildConfig
+import com.andhiratobing.remote.BuildConfig
+
 
 object Constants {
 
