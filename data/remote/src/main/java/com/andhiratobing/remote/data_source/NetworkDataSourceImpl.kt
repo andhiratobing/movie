@@ -1,7 +1,7 @@
-package com.andhiratobing.movieapp.data.network.data_source
+package com.andhiratobing.remote.data_source
 
-import com.andhiratobing.movieapp.data.network.api.ApiService
-import com.andhiratobing.movieapp.data.network.dto.MovieDto
+import com.andhiratobing.remote.api.ApiService
+import com.andhiratobing.remote.dto.MovieDto
 import javax.inject.Inject
 
 class NetworkDataSourceImpl @Inject constructor(
