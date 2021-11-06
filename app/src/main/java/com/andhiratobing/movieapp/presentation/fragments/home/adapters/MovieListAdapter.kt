@@ -5,10 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.andhiratobing.movieapp.databinding.ItemMovieBinding
-import com.andhiratobing.movieapp.domain.models.MovieDomain
 import javax.inject.Inject
 
-class MovieListAdapter @Inject constructor() : ListAdapter<MovieDomain, MovieViewHolder>(DIFF_CALLBACK) {
+class MovieListAdapter @Inject constructor() : ListAdapter<com.andhiratobing.domain.models.MovieDomain, MovieViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         return MovieViewHolder(ItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -19,9 +18,9 @@ class MovieListAdapter @Inject constructor() : ListAdapter<MovieDomain, MovieVie
     }
 
     companion object  {
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<MovieDomain>() {
-            override fun areItemsTheSame(oldItem: MovieDomain, newItem: MovieDomain): Boolean = oldItem.id == newItem.id
-            override fun areContentsTheSame(oldItem: MovieDomain, newItem: MovieDomain): Boolean = oldItem == newItem
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<com.andhiratobing.domain.models.MovieDomain>() {
+            override fun areItemsTheSame(oldItem: com.andhiratobing.domain.models.MovieDomain, newItem: com.andhiratobing.domain.models.MovieDomain): Boolean = oldItem.id == newItem.id
+            override fun areContentsTheSame(oldItem: com.andhiratobing.domain.models.MovieDomain, newItem: com.andhiratobing.domain.models.MovieDomain): Boolean = oldItem == newItem
 
         }
     }

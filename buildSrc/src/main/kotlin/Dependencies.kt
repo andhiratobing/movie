@@ -27,6 +27,8 @@ object Versions {
     const val DAGGER_HILT_VERSION = "2.38.1"
     const val DAGGER_HILT_LIFECYCLE_VERSION = "1.0.0-alpha03"
     const val GLIDE_VERSION = "4.12.0"
+    const val PLAY_CORE_VERSION = "1.10.2"
+    const val PLAY_CORE_KTX_VERSION = "1.8.1"
 }
 
 object Libs {
@@ -59,5 +61,7 @@ object Libs {
     const val loggingInterceptor          = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_VERSION}"
     const val glide                       = "com.github.bumptech.glide:glide:${Versions.GLIDE_VERSION}"
     const val glideCompiler               = "com.github.bumptech.glide:compiler:${Versions.GLIDE_VERSION}"
-    const val glideAnnotation              = "com.github.bumptech.glide:annotations:${Versions.GLIDE_VERSION}"
+    const val glideAnnotation             = "com.github.bumptech.glide:annotations:${Versions.GLIDE_VERSION}"
+    const val playCore                    = "com.google.android.play:core:${Versions.PLAY_CORE_VERSION}"
+    const val playCoreKtx                 = "com.google.android.play:core-ktx:${Versions.PLAY_CORE_KTX_VERSION}"
 }
