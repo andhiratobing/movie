@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/ivImagePosterPath"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        app:riv_oval="false"
+        android:padding="4dp"
+        app:riv_corner_radius="12dp"
+        tools:src="@drawable/ic_sample_poster"
+        android:contentDescription="@string/image_poster_path"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitleTvShows"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:maxLines="1"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        tools:text="Fast and Furious 9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivImagePosterPath"
+        app:layout_constraintStart_toStartOf="@+id/ivImagePosterPath"
+        app:layout_constraintTop_toBottomOf="@+id/ivImagePosterPath" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
