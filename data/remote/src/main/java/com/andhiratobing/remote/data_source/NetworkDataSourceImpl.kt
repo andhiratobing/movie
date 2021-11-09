@@ -31,15 +31,15 @@ class NetworkDataSourceImpl @Inject constructor(
      */
 
     override suspend fun fetchAiringTodayTvShows(): List<TvShowsDto> {
-        TODO("Not yet implemented")
+        return apiService.fetchAiringTodayTvShows().results
     }
 
     override suspend fun fetchPopularTvShows(): List<TvShowsDto> {
-        TODO("Not yet implemented")
+        return apiService.fetchPopularTvShows().results
     }
 
     override suspend fun fetchOnTheAirTvShows(): List<TvShowsDto> {
-        TODO("Not yet implemented")
+        return apiService.fetchOnTheAirTvShows().results
     }
 
 
