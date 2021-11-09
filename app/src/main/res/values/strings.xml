@@ -11,4 +11,7 @@
     <string name="tab_movie">Movie</string>
     <string name="tab_tv_shows">TV Shows</string>
     <string name="home_tab_layout">Home Tab Layout</string>
+    <string name="airing_today_tv_shows">Airing today</string>
+    <string name="popular_tv_shows">Popular</string>
+    <string name="on_the_air_tv_shows">On the air</string>
 </resources>
