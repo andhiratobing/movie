@@ -9,19 +9,19 @@ import javax.inject.Inject
 
 class MovieRepositoryImpl @Inject constructor(
     private val networkDataSource: NetworkDataSource,
-    private val mapper: MovieMapper
+    private val movieMapper: MovieMapper
 ) : IMovieRepository {
 
     override suspend fun fetchPopularMovie(): List<MovieDomain> {
-        return mapper.mapFromEntityToDomain(networkDataSource.fetchPopularMovie())
+        return movieMapper.mapFromEntityToDomain(networkDataSource.fetchPopularMovie())
     }
 
     override suspend fun fetchUpComingMovie(): List<MovieDomain> {
-        return mapper.mapFromEntityToDomain(networkDataSource.fetchUpComingMovie())
+        return movieMapper.mapFromEntityToDomain(networkDataSource.fetchUpComingMovie())
     }
 
     override suspend fun fetchNowPlayingMovie(): List<MovieDomain> {
-        return mapper.mapFromEntityToDomain(networkDataSource.fetchNowPlayingMovie())
+        return movieMapper.mapFromEntityToDomain(networkDataSource.fetchNowPlayingMovie())
     }
 
 }
