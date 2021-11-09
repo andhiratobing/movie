@@ -1,7 +1,7 @@
 package com.andhiratobing.domain.mapper
 
 import com.andhiratobing.domain.models.MovieDomain
-import com.andhiratobing.remote.dto.MovieDto
+import com.andhiratobing.remote.dto.movie.MovieDto
 
 class MovieMapper : Mapper<List<MovieDto>, List<MovieDomain>> {
 
