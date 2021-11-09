@@ -1,14 +1,14 @@
-package com.andhiratobing.remote.dto
+package com.andhiratobing.remote.dto.tv_shows
 
 import com.google.gson.annotations.SerializedName
 
-data class MovieDto (
+data class TvShowsDto(
     @SerializedName("backdrop_path") val backdropPath: String?,
+    @SerializedName("first_air_date") val firstAirDate: String?,
     @SerializedName("genre_ids") val genreIds: List<Int>?,
     @SerializedName("id") val id: Int?,
-    @SerializedName("original_title") val originalTitle: String?,
+    @SerializedName("name") val name: String?,
     @SerializedName("overview") val overview: String?,
     @SerializedName("poster_path") val posterPath: String?,
-    @SerializedName("release_date") val releaseDate: String?,
     @SerializedName("vote_average") val voteAverage: Double?
 )

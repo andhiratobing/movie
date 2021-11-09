@@ -76,22 +76,22 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
     }
 
     private fun showTitleMovie() {
-        bindingMovieFragment.rvTripeList.tvTitlePopularMovie.show()
-        bindingMovieFragment.rvTripeList.tvSeeAllPopularMovie.show()
-        bindingMovieFragment.rvTripeList.tvTitleUpComingMovie.show()
-        bindingMovieFragment.rvTripeList.tvSeeAllUpComingMovie.show()
-        bindingMovieFragment.rvTripeList.tvTitleNowPlayingMovie.show()
-        bindingMovieFragment.rvTripeList.tvSeeAllNowPlayingMovie.show()
+        bindingMovieFragment.rvTripeMovieList.tvTitlePopularMovie.show()
+        bindingMovieFragment.rvTripeMovieList.tvSeeAllPopularMovie.show()
+        bindingMovieFragment.rvTripeMovieList.tvTitleUpComingMovie.show()
+        bindingMovieFragment.rvTripeMovieList.tvSeeAllUpComingMovie.show()
+        bindingMovieFragment.rvTripeMovieList.tvTitleNowPlayingMovie.show()
+        bindingMovieFragment.rvTripeMovieList.tvSeeAllNowPlayingMovie.show()
 
     }
 
     private fun hideTitleMovie() {
-        bindingMovieFragment.rvTripeList.tvTitlePopularMovie.hide()
-        bindingMovieFragment.rvTripeList.tvSeeAllPopularMovie.hide()
-        bindingMovieFragment.rvTripeList.tvTitleUpComingMovie.hide()
-        bindingMovieFragment.rvTripeList.tvSeeAllUpComingMovie.hide()
-        bindingMovieFragment.rvTripeList.tvTitleNowPlayingMovie.hide()
-        bindingMovieFragment.rvTripeList.tvSeeAllNowPlayingMovie.hide()
+        bindingMovieFragment.rvTripeMovieList.tvTitlePopularMovie.hide()
+        bindingMovieFragment.rvTripeMovieList.tvSeeAllPopularMovie.hide()
+        bindingMovieFragment.rvTripeMovieList.tvTitleUpComingMovie.hide()
+        bindingMovieFragment.rvTripeMovieList.tvSeeAllUpComingMovie.hide()
+        bindingMovieFragment.rvTripeMovieList.tvTitleNowPlayingMovie.hide()
+        bindingMovieFragment.rvTripeMovieList.tvSeeAllNowPlayingMovie.hide()
     }
 
     private fun showProgressBar() {
@@ -105,26 +105,26 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
 
     private fun fetchPopularMovie() {
         lifecycleScope.launch {
-            movieViewModel.fetchPopularMovie()
+            movieViewModel.fetchTripleMovie()
         }
     }
 
     private fun setupPopularMovieAdapter() {
-        bindingMovieFragment.rvTripeList.rvPopularMovie.apply {
+        bindingMovieFragment.rvTripeMovieList.rvPopularMovie.apply {
             layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
             adapter = popularMovieListAdapter
         }
     }
 
     private fun setupUpComingMovieAdapter() {
-        bindingMovieFragment.rvTripeList.rvUpComingMovie.apply {
+        bindingMovieFragment.rvTripeMovieList.rvUpComingMovie.apply {
             layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
             adapter = upComingMovieListAdapter
         }
     }
 
     private fun setupNowPlayingMovieAdapter() {
-        bindingMovieFragment.rvTripeList.rvNowPlayingMovie.apply {
+        bindingMovieFragment.rvTripeMovieList.rvNowPlayingMovie.apply {
             layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
             adapter = nowPlayingMovieListAdapter
         }

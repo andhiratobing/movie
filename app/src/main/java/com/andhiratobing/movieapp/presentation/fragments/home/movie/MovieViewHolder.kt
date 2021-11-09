@@ -15,6 +15,7 @@ class MovieViewHolder(private val binding: ItemMovieBinding) :
 
             Glide.with(itemView)
                 .load("${BASE_IMAGE_URL}${movie.posterPath}")
+                .centerCrop()
                 .into(ivImagePosterPath)
         }
     }

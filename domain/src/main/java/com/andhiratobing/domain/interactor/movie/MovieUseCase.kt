@@ -1,4 +1,4 @@
-package com.andhiratobing.domain.interactor
+package com.andhiratobing.domain.interactor.movie
 
 import com.andhiratobing.domain.interactor.movie.now_playing_movie.NowPlayingMovieUseCase
 import com.andhiratobing.domain.interactor.movie.popular_movie.PopularMovieUseCase
