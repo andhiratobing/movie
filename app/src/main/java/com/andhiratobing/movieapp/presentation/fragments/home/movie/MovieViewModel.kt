@@ -3,7 +3,7 @@ package com.andhiratobing.movieapp.presentation.fragments.home.movie
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.andhiratobing.domain.common.ResourceState
-import com.andhiratobing.domain.interactor.MovieUseCase
+import com.andhiratobing.domain.interactor.movie.MovieUseCase
 import com.andhiratobing.domain.models.MovieDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
