@@ -1,12 +1,12 @@
 package com.andhiratobing.domain.models
 
 data class TvShowsDomain(
-    val backdrop_path: String,
-    val first_air_date: String,
-    val genre_ids: List<Int>,
-    val id: Int,
-    val original_name: String,
-    val overview: String,
-    val poster_path: String,
-    val vote_average: Double
+    val backdropPath: String?,
+    val firstAirDate: String?,
+    val genreIds: List<Int>?,
+    val id: Int?,
+    val name: String?,
+    val overview: String?,
+    val posterPath: String?,
+    val voteAverage: Double?
 )
