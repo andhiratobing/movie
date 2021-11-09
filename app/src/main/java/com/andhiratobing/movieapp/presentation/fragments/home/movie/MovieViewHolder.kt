@@ -1,4 +1,4 @@
-package com.andhiratobing.movieapp.presentation.fragments.home.adapters
+package com.andhiratobing.movieapp.presentation.fragments.home.movie
 
 import androidx.recyclerview.widget.RecyclerView
 import com.andhiratobing.domain.models.MovieDomain
