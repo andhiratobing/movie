@@ -8,14 +8,14 @@ class TvShowsMapper : Mapper<List<TvShowsDto>, List<TvShowsDomain>> {
     override fun mapFromEntityToDomain(type: List<TvShowsDto>): List<TvShowsDomain> {
         return type.map { tvShowsDto ->
             TvShowsDomain(
-                backdrop_path = tvShowsDto.backdrop_path,
-                first_air_date = tvShowsDto.first_air_date,
-                genre_ids = tvShowsDto.genre_ids,
+                backdropPath = tvShowsDto.backdropPath,
+                firstAirDate = tvShowsDto.firstAirDate,
+                genreIds = tvShowsDto.genreIds,
                 id = tvShowsDto.id,
-                original_name = tvShowsDto.original_name,
+                name = tvShowsDto.name,
                 overview = tvShowsDto.overview,
-                poster_path = tvShowsDto.poster_path,
-                vote_average = tvShowsDto.vote_average
+                posterPath = tvShowsDto.posterPath,
+                voteAverage = tvShowsDto.voteAverage
             )
         }
     }
@@ -23,14 +23,14 @@ class TvShowsMapper : Mapper<List<TvShowsDto>, List<TvShowsDomain>> {
     override fun mapFromDomainToEntity(type: List<TvShowsDomain>): List<TvShowsDto> {
         return type.map { tvShowsDomain ->
             TvShowsDto(
-                backdrop_path = tvShowsDomain.backdrop_path,
-                first_air_date = tvShowsDomain.first_air_date,
-                genre_ids = tvShowsDomain.genre_ids,
+                backdropPath = tvShowsDomain.backdropPath,
+                firstAirDate = tvShowsDomain.firstAirDate,
+                genreIds = tvShowsDomain.genreIds,
                 id = tvShowsDomain.id,
-                original_name = tvShowsDomain.original_name,
+                name = tvShowsDomain.name,
                 overview = tvShowsDomain.overview,
-                poster_path = tvShowsDomain.poster_path,
-                vote_average = tvShowsDomain.vote_average
+                posterPath = tvShowsDomain.posterPath,
+                voteAverage = tvShowsDomain.voteAverage
             )
         }
     }
