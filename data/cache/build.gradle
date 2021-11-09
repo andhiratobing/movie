@@ -5,6 +5,7 @@ plugins {
 
 android {
     compileSdk DefaultConfig.COMPILE_SDK
+    buildToolsVersion DefaultConfig.BUILD_TOOLS
 
     defaultConfig {
         minSdk DefaultConfig.MIN_SDK
