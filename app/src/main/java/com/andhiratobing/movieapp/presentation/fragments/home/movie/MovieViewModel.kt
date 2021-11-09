@@ -23,7 +23,7 @@ class MovieViewModel @Inject constructor(
     val movieStateFlow: StateFlow<ResourceState<Triple<List<MovieDomain>, List<MovieDomain>, List<MovieDomain>>>> get() = _movieMutableStateFlow
 
 
-    fun fetchPopularMovie() {
+    fun fetchTripleMovie() {
         viewModelScope.launch {
             val popularMovie = movieUseCase.popularMovieUseCase.execute()
                 .onEach {
