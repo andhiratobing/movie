@@ -12,5 +12,13 @@ class NetworkDataSourceImpl @Inject constructor(
         return apiService.fetchPopularMovie().result
     }
 
+    override suspend fun fetchUpComingMovie(): List<MovieDto> {
+        return apiService.fetchUpComingMovie().result
+    }
+
+    override suspend fun fetchNowPlayingMovie(): List<MovieDto> {
+        return apiService.fetchNowPlayingMovie().result
+    }
+
 
 }

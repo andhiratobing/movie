@@ -8,6 +8,7 @@ plugins {
 
 android {
     compileSdk DefaultConfig.COMPILE_SDK
+    buildToolsVersion DefaultConfig.BUILD_TOOLS
 
     defaultConfig {
         applicationId "com.andhiratobing.movieapp"
@@ -37,8 +38,6 @@ android {
     }
     kapt {
         correctErrorTypes = true
-        keepJavacAnnotationProcessors = true
-        useBuildCache = false
     }
 }
 
@@ -55,19 +54,22 @@ dependencies {
     implementation(Libs.appCompat)
     implementation(Libs.material)
     implementation(Libs.constraintLayout)
+    implementation(Libs.legacySupport)
     //navigation
     implementation(Libs.navigationFragmentKtx)
     implementation(Libs.navigationUiKtx)
     //di
     implementation(Libs.hiltAndroid)
     implementation(Libs.hiltLifecycle)
-    kapt Libs.hiltCompiler
+    kapt(Libs.hiltCompiler)
     //glide
     implementation(Libs.glide)
-    implementation(Libs.glideAnnotation)
+    kapt(Libs.glideAnnotation)
     kapt(Libs.glideCompiler)
     //coroutine
     implementation(Libs.coroutinesAndroid)
     implementation(Libs.coroutinesCore)
+    //rounded image
+    implementation(Libs.roundedImageView)
 
 }
