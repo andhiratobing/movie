@@ -3,75 +3,44 @@ package com.andhiratobing.movieapp.presentation.fragments.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.andhiratobing.movieapp.R
 import com.andhiratobing.movieapp.databinding.FragmentHomeBinding
-import com.andhiratobing.movieapp.presentation.fragments.home.adapters.MovieListAdapter
-import com.andhiratobing.movieapp.presentation.utils.extensions.hide
-import com.andhiratobing.movieapp.presentation.utils.extensions.show
-import com.google.android.material.snackbar.Snackbar
+import com.andhiratobing.movieapp.presentation.fragments.home.adapters.HomeSectionPageAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding as FragmentHomeBinding
-    private val homeViewModel: HomeViewModel by viewModels()
-    @Inject
-    lateinit var movieListAdapter: MovieListAdapter
+    private var _bindingHomeFragment: FragmentHomeBinding? = null
+    private val bindingHomeFragment get() = _bindingHomeFragment as FragmentHomeBinding
+    private lateinit var homeSectionPageAdapter: HomeSectionPageAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentHomeBinding.bind(view)
+        _bindingHomeFragment = FragmentHomeBinding.bind(view)
 
-        setupAdapter()
-        fetchPopularMovie()
-        collectData()
+        setTabLayoutAdapter()
     }
 
-    private fun collectData() {
-        lifecycleScope.launchWhenStarted {
-            homeViewModel.popularMovieStateFlow.collect { result ->
-                when(result) {
-                    is com.andhiratobing.domain.common.ResourceState.Loading -> {
-                        binding.progressBar.show()
-                    }
-                    is com.andhiratobing.domain.common.ResourceState.Success -> {
-                        binding.progressBar.hide()
-                        movieListAdapter.submitList(result.data)
-                    }
-                    is com.andhiratobing.domain.common.ResourceState.Error -> {
-                        binding.progressBar.hide()
-                        Snackbar.make(binding.root, "${result.message}", Snackbar.LENGTH_LONG).show()
-                    }
-                    else -> Unit
+    private fun setTabLayoutAdapter() {
+        bindingHomeFragment.apply {
+            homeSectionPageAdapter = HomeSectionPageAdapter(parentFragmentManager, lifecycle)
+            viewPager.adapter = homeSectionPageAdapter
+
+            TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+                when(position) {
+                    0 -> tab.text = resources.getString(R.string.tab_movie)
+                    1 -> tab.text = resources.getString(R.string.tab_tv_shows)
                 }
-            }
+            }.attach()
         }
     }
 
-    private fun fetchPopularMovie() {
-        lifecycleScope.launch {
-            homeViewModel.fetchPopularMovie()
-        }
-    }
-
-    private fun setupAdapter() {
-        binding.rvHome.apply {
-            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
-            adapter = movieListAdapter
-        }
-    }
 
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        _bindingHomeFragment = null
     }
 }
