@@ -7,6 +7,7 @@ plugins {
 
 android {
     compileSdk DefaultConfig.COMPILE_SDK
+    buildToolsVersion DefaultConfig.BUILD_TOOLS
 
     defaultConfig {
         minSdk DefaultConfig.MIN_SDK
@@ -33,8 +34,6 @@ android {
     }
     kapt {
         correctErrorTypes = true
-        keepJavacAnnotationProcessors = true
-        useBuildCache = false
     }
 }
 
@@ -49,7 +48,7 @@ dependencies {
     implementation(Libs.coroutinesCore)
 
     //di
-    api(Libs.hiltAndroid)
-    api(Libs.hiltLifecycle)
-    kapt Libs.hiltCompiler
+    implementation(Libs.hiltAndroid)
+    implementation(Libs.hiltLifecycle)
+    kapt(Libs.hiltCompiler)
 }
