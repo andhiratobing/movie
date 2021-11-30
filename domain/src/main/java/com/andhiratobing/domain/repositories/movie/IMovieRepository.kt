@@ -7,4 +7,5 @@ interface IMovieRepository {
     suspend fun fetchPopularMovie(): List<MovieDomain>
     suspend fun fetchUpComingMovie(): List<MovieDomain>
     suspend fun fetchNowPlayingMovie(): List<MovieDomain>
+
 }

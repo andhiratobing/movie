@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_nav"
     app:startDestination="@id/homeFragment">
 
@@ -16,4 +17,22 @@
         android:id="@+id/settingsFragment"
         android:name="com.andhiratobing.movieapp.presentation.fragments.settings.SettingsFragment"
         android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.andhiratobing.movieapp.presentation.fragments.home.movie.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_movieFragment_to_popularMoviePagingFragment"
+            app:destination="@id/popularMoviePagingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowsFragment"
+        android:name="com.andhiratobing.movieapp.presentation.fragments.home.tv_shows.TvShowsFragment"
+        android:label="fragment_tv_shows"
+        tools:layout="@layout/fragment_tv_shows" />
+    <fragment
+        android:id="@+id/popularMoviePagingFragment"
+        android:name="com.andhiratobing.movieapp.presentation.fragments.home.movie.paging.PopularMoviePagingFragment"
+        android:label="PopularMoviePagingFragment" />
 </navigation>

@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andhiratobing.domain.common.ResourceState
 import com.andhiratobing.domain.models.MovieDomain
@@ -42,6 +43,7 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         setupUpComingMovieAdapter()
         fetchPopularMovie()
         collectData()
+        seeAllPopularMovie()
     }
 
     private fun collectData() {
@@ -68,6 +70,22 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         }
     }
 
+    private fun seeAllPopularMovie(){
+        bindingMovieFragment.apply {
+            rvTripeMovieList.tvSeeAllPopularMovie.setOnClickListener {
+                goToPopularMoviePaging()
+            }
+        }
+    }
+
+    private fun goToPopularMoviePaging() {
+        if (findNavController().currentDestination?.id == R.id.movieFragment) {
+            val directions = MovieFragmentDirections.actionMovieFragmentToPopularMoviePagingFragment()
+            findNavController().navigate(directions)
+        } else {
+            return
+        }
+    }
 
     private fun submitTripleData(data: Triple<List<MovieDomain>, List<MovieDomain>, List<MovieDomain>>) {
         popularMovieListAdapter.submitList(data.first)

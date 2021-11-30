@@ -51,4 +51,7 @@ dependencies {
     implementation(Libs.hiltAndroid)
     implementation(Libs.hiltLifecycle)
     kapt(Libs.hiltCompiler)
+
+    //paging3
+    implementation(Libs.pagingRuntimeKtx)
 }

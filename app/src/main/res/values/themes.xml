@@ -26,4 +26,9 @@
         <item name="contentDescription">@string/home_tab_layout</item>
     </style>
 
+    <!-- Color app bar -->
+    <style name="colorAppBarCustom" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:background">@color/white</item>
+    </style>
+
 </resources>

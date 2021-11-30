@@ -51,4 +51,11 @@ dependencies {
     implementation(Libs.hiltAndroid)
     implementation(Libs.hiltLifecycle)
     kapt(Libs.hiltCompiler)
+
+    //paging3
+    implementation(Libs.pagingRuntimeKtx)
+
+    //coroutine
+    implementation(Libs.coroutinesAndroid)
+    implementation(Libs.coroutinesCore)
 }
